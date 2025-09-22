@@ -1,3 +1,10 @@
+# This script enhances images by adding cinematic visual effects such as bokeh,
+# lens flares, and glitter particles. It randomly generates effect positions,
+# sizes, colors, and intensities to produce natural-looking overlays. The script
+# processes all supported images in an input folder and saves the enhanced
+# outputs to the specified output folder, while robustly handling errors or
+# mismatched effect sizes during overlay.
+
 import cv2
 import numpy as np
 import os
