@@ -1,3 +1,9 @@
+# This script generates text prompts from a COCO-style annotation file
+# (instances_generated.json). It maps each image to a "Kill: <class_name>"
+# prompt based on the first annotated object in the image. The script builds
+# a mapping of category IDs to class names, collects annotations per image,
+# and saves the resulting prompts to train_prompts_generated2.json.
+
 import json
 
 # Load the instances_generated.json file
@@ -29,5 +35,5 @@ for img in data['images']:
     prompt = f"Kill: {class_name}"
     prompts.append({"image_id": image_id_str, "prompt": prompt})
 
-with open("train_prompts_generated2.json", "w") as out_f:
+with open("train_prompts_generated.json", "w") as out_f:
     json.dump(prompts, out_f, indent=1)
